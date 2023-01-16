@@ -21,17 +21,10 @@ function buildCard(recipe) {
     const recipeLink = '#';
 
     function getUserCardDOM() {
-        console.log(recipe.ingredients[0]);
-        console.log(recipe.ingredients[1]);
-        console.log(recipe.ingredients[2]);
-        console.log(recipe.ingredients[3]);
-        console.log(recipe.ingredients[4]);
-        console.log(recipe.ingredients[5]);
-        console.log(recipe.ingredients[6]);
-        console.log(recipe.ingredients[7]);
-        console.log(recipe.ingredients[8]);
-        // Affiche les éléments mais les affiches sous forme d'objet
 
+        ingredients.forEach((ingredient) => {
+            console.log(ingredient);
+        })
 
         const article = document.createElement( 'article' );
 
