@@ -21,11 +21,6 @@ function buildCard(recipe) {
     const recipeLink = '#';
 
     function getUserCardDOM() {
-
-        ingredients.forEach((ingredient) => {
-            console.log(ingredient);
-        })
-
         const article = document.createElement( 'article' );
 
         const link = document.createElement( 'a' );
@@ -53,7 +48,27 @@ function buildCard(recipe) {
         ingredientsAndDescriptionWrapper.classList.add("ingredientsAndDescriptionWrapper");
         
         const recipeIngredients = document.createElement( 'ul' );
-        recipeIngredients.textContent = ingredients;
+        // recipeIngredients.textContent = ingredient;
+        ingredients.forEach(renderIngredientList);
+
+        function renderIngredientList(element, index, arr) {
+            let li = document.createElement('li');
+            li.setAttribute('class','item');
+
+            recipeIngredients.appendChild(li);
+            console.log(element);
+            console.log('pause');
+            let t;
+            t = document.createTextNode(element);
+            li.innerHTML = li.innerHTML + element;
+        }
+
+        // const ingredient = ingredients.forEach((ingredient) => {
+        //     let li = document.createElement('li');
+        //     recipeIngredients
+        //     console.log(ingredient);
+    
+        // });
 
         const recipeDescription = document.createElement( 'p' );
         recipeDescription.textContent = description;
@@ -70,5 +85,5 @@ function buildCard(recipe) {
         link.appendChild(ingredientsAndDescriptionWrapper);
         return (article);
     }
-    return { name, picture, getUserCardDOM }
+    return { getUserCardDOM }
 }

@@ -6,6 +6,8 @@
 
 body {
     font-family: 'Lato', sans-serif;
+    margin: 0;
+    padding: 0 100px;
 }
 
 header {
@@ -30,7 +32,7 @@ header {
 
 .p-search-bar input {
     background-color: #E7E7E7;
-    width: 90%;
+    width: 100%;
     height: 70px;
     padding-left: 15px;
     font-size: 18px;
@@ -47,8 +49,55 @@ header {
     border: none;
     border-radius: 0 10px 10px 0;
     cursor: pointer;
-  }
+}
   
-  .p-search-bar button:hover {
+.p-search-bar button:hover {
+    background-color: #D04F4F;
+}
 
-  }
+
+/* RECETTES-GALLERY */
+.search-result {
+    padding-top: 50px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(20%, 1fr));
+    grid-gap: 1% 7%;
+}
+.search-result a {
+    text-decoration: none;
+}
+
+.search-result article {
+    display: flex;
+    flex-direction: column;
+    background-color: #E7E7E7;
+    border-radius: 10px;
+}
+
+.search-result article .imageRecipeWrapper {
+    width: 100%;
+}
+.search-result article .imageRecipeWrapper img {
+    width: 100%;
+}
+.search-result article .h2andTimeWrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 75px;
+    padding: 0 10px 0 10px;
+}
+
+.search-result article .ingredientsAndDescriptionWrapper {
+    display: flex;
+    justify-content: space-between;
+}
+
+.search-result article .ingredientsAndDescriptionWrapper ul {
+    width: 50%;
+}
+.search-result article .ingredientsAndDescriptionWrapper p {
+    width: 50%;
+    height: 200px;
+    overflow: hidden;
+}
